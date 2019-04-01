@@ -33,6 +33,9 @@ var settings = map[string]string{
 	"log_color_runner":  "green",
 	"log_color_watcher": "magenta",
 	"log_color_app":     "",
+	"build_before":      "",
+	"build_after":       "",
+	"ignored_file":      "",
 }
 
 var colors = map[string]string{
@@ -125,6 +128,14 @@ func buildPath() string {
 		p += ".exe"
 	}
 	return p
+}
+
+func buildBefore() string {
+	return settings["build_before"]
+}
+
+func buildAfter() string {
+	return settings["build_after"]
 }
 
 func buildErrorsFileName() string {

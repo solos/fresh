@@ -45,6 +45,15 @@ func isWatchedFile(path string) bool {
 		return false
 	}
 
+	//ignored file check must be before valid_ext
+	for _, e := range strings.Split(settings["ignored_file"], ",") {
+
+		runnerLog(filepath.Base(path))
+		if strings.TrimSpace(e) == strings.TrimSpace(path) {
+			return false
+		}
+	}
+
 	ext := filepath.Ext(path)
 
 	for _, e := range strings.Split(settings["valid_ext"], ",") {

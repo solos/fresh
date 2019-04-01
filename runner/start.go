@@ -54,6 +54,7 @@ func start() {
 				mainLog(err.Error())
 			}
 
+			runBefore()
 			buildFailed := false
 			if shouldRebuild(eventName) {
 				errorMessage, ok := build()
@@ -73,6 +74,7 @@ func start() {
 				}
 				run()
 			}
+			runAfter()
 
 			started = true
 			mainLog(strings.Repeat("-", 20))

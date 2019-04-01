@@ -37,3 +37,17 @@ func build() (string, bool) {
 
 	return "", true
 }
+
+func before() string {
+
+	buildLog("Before buld...")
+	return buildBefore()
+
+}
+
+func after() string {
+
+	buildLog("After buld...")
+	return buildAfter()
+
+}
