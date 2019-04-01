@@ -3,6 +3,7 @@ package runner
 import (
 	"io"
 	"os/exec"
+	"strings"
 )
 
 func runBefore() bool {
