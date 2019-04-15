@@ -32,6 +32,7 @@ func flushEvents() {
 func start() {
 	loopIndex := 0
 	buildDelay := buildDelay()
+	_, _ = build()
 
 	started := false
 
